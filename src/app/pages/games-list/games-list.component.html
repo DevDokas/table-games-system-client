@@ -1,0 +1,7 @@
+<section class="p-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let game of gamesList">
+      <app-card [game]="game" (click)="selectGame(game)"></app-card>
+    </div>
+  </div>
+</section>

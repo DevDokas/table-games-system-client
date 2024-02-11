@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rpg-websocket-ssr';
+
+  constructor () {
+    console.log('oi')
+  }
 }

@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vh;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  height: 7.5vh;
+  background-color: transparent;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
