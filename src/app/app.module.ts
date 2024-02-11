@@ -9,6 +9,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginDialogModule } from './components/login-dialog/login-dialog.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NavigationModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    LoginDialogModule
   ],
   providers: [
     provideClientHydration(),

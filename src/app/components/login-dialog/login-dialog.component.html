@@ -1,10 +1,22 @@
-<section>
-  <form >
-<!--     <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field> -->
+<section class="p-3">
+  <form class="d-flex flex-column" [formGroup]="loginForm">
+    <mat-form-field hideRequiredMarker="true" appearance="outline">
+      <mat-label>Login</mat-label>
+      <input matInput formControlName="login">
+      @if (loginForm.controls['login'].invalid) {
+        <mat-error>Digite seu login</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field hideRequiredMarker="true" appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="password">
+      @if (loginForm.controls['password'].invalid) {
+        <mat-error>Digite sua senha</mat-error>
+      }
+    </mat-form-field>
+    <div class="d-flex flex-column align-items-center gap-2">
+      <button (click)="login()" class="btn-login w-75">Fazer login</button>
+      <button class="btn-register w-75">Registrar</button>
+    </div>
   </form>
 </section>

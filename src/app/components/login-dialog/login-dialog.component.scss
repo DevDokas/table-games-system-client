@@ -1,0 +1,22 @@
+@import '../../../s-colors';
+
+::ng-deep mat-form-field {
+  width: 20vw;
+}
+
+button {
+  padding: 0.25vh;
+  border-radius: 0.5vh;
+}
+
+.btn-login {
+  border: 0;
+  color: $whiteColor;
+  background-color: $primaryColor;
+}
+
+.btn-register {
+  border: 0.1vh solid $primaryColor;
+  color: $primaryColor;
+  background-color: transparent;
+}

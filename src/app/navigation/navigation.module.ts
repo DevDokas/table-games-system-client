@@ -4,6 +4,7 @@ import { NavigationComponent } from './navigation.component';
 import { NavigationRoutingModule } from './navigation-routing.module';
 
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     NavigationRoutingModule,
     MatIconModule,
   ],

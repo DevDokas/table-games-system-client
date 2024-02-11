@@ -4,6 +4,7 @@ import { GamesListComponent } from './games-list.component';
 import { GamesListRoutingModule} from './games-list-routing.module';
 import { CardModule } from '../../components/general/card/card.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   imports: [
     CommonModule,
     GamesListRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     CardModule,
     MatDialogModule,
   ],
