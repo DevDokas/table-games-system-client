@@ -1,8 +1,25 @@
 <mat-tab-group>
-  <mat-tab label="First">
+  <mat-tab label="Início">
 
   </mat-tab>
-  <mat-tab label="Second">
+  <mat-tab label="Salas">
+    <div class="d-flex p-5 justify-content-end">
+      <button (click)="createRoom()" >
+        <h5>Criar sala</h5>
+        <mat-icon>meeting_room</mat-icon>
+      </button>
+    </div>
+    <div class="d-flex flex-column gap-2 px-5 pb-5">
+      <div class="room-container" *ngFor="let room of rooms, let i = index" (click)="joinRoom(i + 1)">
+        <h4>{{gameSelected.name}} - Sala {{i + 1}}</h4>
+        <div class="d-flex align-items-center gap-1">
+          <h5>{{room.joined.length.toString().padStart(2, '0')}}</h5>
+          <mat-icon>person</mat-icon>
+        </div>
 
+      </div>
+    </div>
   </mat-tab>
 </mat-tab-group>
+
+<router-outlet></router-outlet>

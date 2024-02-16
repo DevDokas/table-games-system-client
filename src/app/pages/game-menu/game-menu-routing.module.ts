@@ -5,7 +5,17 @@ import { GameMenuComponent } from './game-menu.component';
 const routes: Routes = [
   {
     path: ':id',
-    component: GameMenuComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        component: GameMenuComponent,
+      },
+      {
+        path: 'fate-basic',
+        loadChildren: () => import('../games/fate-basic/fate-basic.module').then(m => m.FateBasicModule)
+      }
+    ]
   }
 ];
 

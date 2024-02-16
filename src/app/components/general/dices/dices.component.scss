@@ -1,0 +1,52 @@
+@import '../../../../s-colors';
+
+section {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.roll-box {
+  position: relative;
+  padding: 3.5vh;
+  border: 0;
+  border-radius: 2.5vh;
+  height: fit-content;
+  width: fit-content;
+  background-color: $grayColor;
+}
+
+::ng-deep .dice {
+
+  svg {
+    transform: translate(0, -15%) !important;
+  }
+}
+
+.result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(10, 77, 155);
+  font-size: 6vh;
+  font-weight: 600;
+  -webkit-text-stroke: 0.2vh $blackColor;
+}
+
+.dice-box {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  border: 0;
+  border-radius: 5vh;
+  width: fit-content;
+  padding: 1vh 1vw;
+  background-color: $grayColor;
+}
+
+img {
+  height: 5vh;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}

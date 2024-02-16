@@ -1,0 +1,14 @@
+<section class="d-flex flex-column gap-2">
+  <div *ngIf="isDiceRolling" class="roll-box">
+    <ng-lottie class="dice" width="20vh" width="20vh" [options]="options" (animationCreated)="isDiceRolling ? animationCreated($event) : null"></ng-lottie>
+    <p class="result" *ngIf="showResult > 0">{{showResult}}</p>
+  </div>
+  <div class="dice-box">
+    <img *ngIf="hasD4" (click)="rollDice(4)" [src]="d4" alt="">
+    <img *ngIf="hasD6" (click)="rollDice(6)" [src]="d6" alt="">
+    <img *ngIf="hasD8" (click)="rollDice(8)" [src]="d8" alt="">
+    <img *ngIf="hasD10" (click)="rollDice(10)" [src]="d10" alt="">
+    <img *ngIf="hasD12" (click)="rollDice(12)" [src]="d12" alt="">
+    <img *ngIf="hasD20" (click)="rollDice(20)" [src]="d20" alt="">
+  </div>
+</section>

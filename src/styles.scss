@@ -40,3 +40,33 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 19px;
+  background-color: #ABABAB;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #727272;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #727272;
+}

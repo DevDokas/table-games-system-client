@@ -16,6 +16,10 @@ const routes: Routes = [
       {
         path: 'game',
         loadChildren: () => import('../pages/game-menu/game-menu.module').then(m => m.GameMenuModule)
+      },
+      {
+        path: 'register',
+        loadChildren: () => import('../pages/register/register.module').then(m => m.RegisterModule)
       }
     ]
   }

@@ -9,7 +9,8 @@
     </mat-form-field>
     <mat-form-field hideRequiredMarker="true" appearance="outline">
       <mat-label>Senha</mat-label>
-      <input matInput formControlName="password">
+      <input matInput [type]="showPassword" formControlName="password">
+      <mat-icon matSuffix (click)="toggleShowPassword()">{{showPassword == 'password' ? 'visibility' : 'visibility_off' }}</mat-icon>
       @if (loginForm.controls['password'].invalid) {
         <mat-error>Digite sua senha</mat-error>
       }

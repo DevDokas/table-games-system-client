@@ -5,8 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
 
+  userToken = 'USER_TOKEN'
+  userId = 'USER_ID'
+  userName = 'USER_NAME'
+
   gameSelected = 'GAME_SELECTED'
   gameNavbarMenu = 'GAME_NAVBAR_MENU'
+
+  roomSelected = 'ROOM_SELECTED'
 
   constructor() { }
 

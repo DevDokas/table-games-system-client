@@ -15,8 +15,16 @@ export class UserService {
     private http: HttpClient
   ) { }
 
+  getById(id: string): Observable<any> {
+    return this.http.get(`${this.url}/${this.path}/${id}`)
+  }
+
   login(body: any): Observable<any> {
     const requisition = this.http.post(`${this.url}/${this.path}/login`, body)
     return requisition;
+  }
+
+  register(body: any): Observable<any> {
+    return this.http.post(`${this.url}/${this.path}/register`, body)
   }
 }

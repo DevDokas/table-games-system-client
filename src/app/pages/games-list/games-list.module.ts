@@ -5,6 +5,7 @@ import { GamesListRoutingModule} from './games-list-routing.module';
 import { CardModule } from '../../components/general/card/card.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     CardModule,
     MatDialogModule,
+    NgxSkeletonLoaderModule,
   ],
   exports: [
     GamesListComponent
