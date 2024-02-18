@@ -1,0 +1,132 @@
+<section class="p-3">
+  <form class="d-flex flex-column" [formGroup]="fichaForm">
+    <h5>Informações de personagem</h5>
+    <div class="d-flex flex-column gap-3">
+      <mat-form-field hideRequiredMarker="true" appearance="outline">
+        <mat-label>Nome do Personagem</mat-label>
+        <input matInput formControlName="char_name">
+      </mat-form-field>
+      <mat-form-field class="mt-3" hideRequiredMarker="true" appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+
+      @if(data.type == 'play') {
+        <div class="d-flex gap-3 mt-3">
+          <mat-form-field class="w-50" hideRequiredMarker="true" appearance="outline">
+            <mat-label>Pontos de recarga</mat-label>
+            <input matInput type="number" formControlName="refresh_points">
+          </mat-form-field>
+          <mat-form-field class="w-50" hideRequiredMarker="true" appearance="outline">
+            <mat-label>Pontos de destino</mat-label>
+            <input matInput type="number" formControlName="fate_points">
+          </mat-form-field>
+        </div>
+      }
+
+    </div>
+    <div class="d-flex">
+      <div class="d-flex flex-column w-50 p-2">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5>Aspectos</h5>
+          <mat-icon class="add" (click)="addPhase()">add</mat-icon>
+        </div>
+        <div class="d-flex flex-column gap-3">
+          <mat-form-field hideRequiredMarker="true" appearance="outline">
+            <mat-label>Conceito</mat-label>
+            <input matInput formControlName="aspects_concept">
+          </mat-form-field>
+          <mat-form-field class="mt-3" hideRequiredMarker="true" appearance="outline">
+            <mat-label>Problema</mat-label>
+            <input matInput formControlName="aspects_problem">
+          </mat-form-field>
+          <div class="d-flex flex-column gap-3 mt-3" formArrayName="aspects_phase">
+            <mat-form-field [class.mt-3]="i > 0" *ngFor="let aspect of getControls('aspects_phase'); let i = index;" hideRequiredMarker="true" appearance="outline">
+              <mat-label>Aspecto</mat-label>
+              <input matInput="" [formControlName]="i" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="w-50 p-2">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5>Perícias</h5>
+        </div>
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex flex-column align-items-end" formArrayName="expertise_average1">
+            <mat-icon class="add reposition" (click)="addExpertise('average1')">add</mat-icon>
+            <div class="d-flex w-100 align-items-center gap-3 overflow-x-auto">
+              <mat-form-field class="form-field" *ngFor="let expertise of getControls('expertise_average1'); let i = index;" hideRequiredMarker="true" appearance="outline">
+                <mat-label>Average</mat-label>
+                <input matInput="" [formControlName]="i" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-end mt-3" formArrayName="expertise_fair2">
+            <mat-icon class="add reposition" (click)="addExpertise('fair2')">add</mat-icon>
+            <div class="d-flex w-100 align-items-center gap-3 overflow-x-auto">
+              <mat-form-field class="form-field" *ngFor="let expertise of getControls('expertise_fair2'); let i = index;" hideRequiredMarker="true" appearance="outline">
+                <mat-label>Fair</mat-label>
+                <input matInput="" [formControlName]="i" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-end mt-3" formArrayName="expertise_good3">
+            <mat-icon class="add reposition" (click)="addExpertise('good3')">add</mat-icon>
+            <div class="d-flex w-100 align-items-center gap-3 overflow-x-auto">
+              <mat-form-field class="form-field" *ngFor="let expertise of getControls('expertise_good3'); let i = index;" hideRequiredMarker="true" appearance="outline">
+                <mat-label>Good</mat-label>
+                <input matInput="" [formControlName]="i" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-end mt-3" formArrayName="expertise_great4">
+            <mat-icon class="add reposition" (click)="addExpertise('great4')">add</mat-icon>
+            <div class="d-flex w-100 align-items-center gap-3 overflow-x-auto">
+              <mat-form-field class="form-field" *ngFor="let expertise of getControls('expertise_great4'); let i = index;" hideRequiredMarker="true" appearance="outline">
+                <mat-label>Great</mat-label>
+                <input matInput="" [formControlName]="i" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-end mt-3" formArrayName="expertise_superb5">
+            <mat-icon class="add reposition" (click)="addExpertise('superb5')">add</mat-icon>
+            <div class="d-flex w-100 align-items-center gap-3 overflow-x-auto">
+              <mat-form-field class="form-field" *ngFor="let expertise of getControls('expertise_superb5'); let i = index;" hideRequiredMarker="true" appearance="outline">
+                <mat-label>Superb</mat-label>
+                <input matInput="" [formControlName]="i" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex w-100">
+      <div class="d-flex flex-column p-2 w-50" formArrayName="extras">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5>Extras</h5>
+          <mat-icon class="add" (click)="addExtras()">add</mat-icon>
+        </div>
+        <ng-container *ngFor="let expertise of getControls('extras'); let i = index;">
+          <mat-form-field hideRequiredMarker="true" appearance="outline">
+            <input matInput="" [formControlName]="i" />
+          </mat-form-field>
+        </ng-container>
+      </div>
+      <div class="d-flex flex-column p-2 w-50" formArrayName="stunts">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5>Façanhas</h5>
+          <mat-icon class="add" (click)="addStunts()">add</mat-icon>
+        </div>
+        <ng-container *ngFor="let expertise of getControls('stunts'); let i = index;">
+          <mat-form-field hideRequiredMarker="true" appearance="outline">
+            <input matInput="" [formControlName]="i" />
+          </mat-form-field>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+  <div>
+    <button (click)="create()">criar</button>
+  </div>
+</section>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DicesComponent } from './dices.component';
 import { LottieComponent } from 'ngx-lottie';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { LottieComponent } from 'ngx-lottie';
   ],
   imports: [
     CommonModule,
-    LottieComponent
+    LottieComponent,
+    MatIconModule
   ],
   exports: [
     DicesComponent

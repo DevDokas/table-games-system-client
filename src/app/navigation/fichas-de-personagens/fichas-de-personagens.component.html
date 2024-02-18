@@ -1,0 +1,19 @@
+<section class="p-3">
+  <div class="d-flex justify-content-end w-100 mb-3">
+    <div class="add-button" (click)="openDialog('create')">
+      <h6>
+        Criar Personagem
+      </h6>
+      <mat-icon>add</mat-icon>
+    </div>
+  </div>
+  <div>
+    <div class="char-container" *ngFor="let char of charList">
+      <h6>{{char.char_name}}</h6>
+      <div class="d-flex gap-2">
+        <button class="select" (click)="selectChar(char)">Selecionar</button>
+        <button class="edit" (click)="openDialog('edit', char._id)">Editar</button>
+      </div>
+    </div>
+  </div>
+</section>

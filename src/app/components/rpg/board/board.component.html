@@ -1,0 +1,13 @@
+<section class="d-flex position-relative flex-column justify-content-center align-items-center w-100 h-100">
+  <div class="w-100 position-absolute px-4 pt-3 top-0 d-flex justify-content-end">
+    <mat-icon (click)="openConfig()" class="settings">settings</mat-icon>
+  </div>
+  @if (backgroundImage?.src == '') {
+    <div class="h-75 d-flex flex-column align-items-center justify-content-center">
+      <h1 style="color: #e6e6e6;">Adicione uma imagem para exibir o tabuleiro</h1>
+      <h3 style="color: #e6e6e6;">Abra as configurações para adicionar uma imagem</h3>
+    </div>
+  }
+  <canvas>
+  </canvas>
+</section>

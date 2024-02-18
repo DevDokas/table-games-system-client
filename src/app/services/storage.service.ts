@@ -12,6 +12,8 @@ export class StorageService {
   gameSelected = 'GAME_SELECTED'
   gameNavbarMenu = 'GAME_NAVBAR_MENU'
 
+  charSelected = 'CHAR_SELECTED'
+
   roomSelected = 'ROOM_SELECTED'
 
   constructor() { }

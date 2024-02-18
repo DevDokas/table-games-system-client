@@ -1,0 +1,19 @@
+<section class="p-3">
+  <div class="w-100 d-flex justify-content-end">
+    <mat-icon (click)="close()">close</mat-icon>
+  </div>
+  <form class="w-100 d-flex flex-column p-3 gap-4" [formGroup]="configForm">
+    <div class="d-flex flex-column p-1">
+      <mat-form-field hideRequiredMarker="true" appearance="outline">
+        <mat-label>Imagem de background</mat-label>
+        <input placeholder="URL da imagem" matInput formControlName="backgroundImage">
+      </mat-form-field>
+      <mat-form-field hideRequiredMarker="true" appearance="outline">
+        <mat-label>Tamanho das células</mat-label>
+        <input type="number" matInput formControlName="cellSize">
+        <mat-hint>Cada célula terá {{configForm.controls['cellSize'].value ?? 50}} x {{configForm.controls['cellSize'].value ?? 50}} unidades</mat-hint>
+      </mat-form-field>
+    </div>
+    <button (click)="save()">Salvar</button>
+  </form>
+</section>

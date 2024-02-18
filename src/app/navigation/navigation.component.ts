@@ -6,6 +6,8 @@ import { UserService } from '../services/user.service';
 import { DOCUMENT } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 import { WebsocketFateBaseConnectionService } from '../services/websocket/websocket-fate-base-connection.service';
+import { MatDialog } from '@angular/material/dialog';
+import { FichasDePersonagensComponent } from './fichas-de-personagens/fichas-de-personagens.component';
 
 @Component({
   selector: 'app-navigation',
@@ -39,6 +41,7 @@ export class NavigationComponent {
     @Inject(PLATFORM_ID) private platformId: Object,
     private cdr: ChangeDetectorRef,
     private router: Router,
+    private dialog: MatDialog,
     private userService: UserService,
     private emitterService: EmitterService,
     private storageService: StorageService,
@@ -77,6 +80,22 @@ export class NavigationComponent {
     }
     if (screen == 'skills') {
       this.isSkillsOpenned = !this.isSkillsOpenned
+    }
+  }
+
+  openModal(dialog: string) {
+    if (dialog == 'fichas-personagens') {
+      const dialogRef = this.dialog.open(FichasDePersonagensComponent, {
+        disableClose: false,
+        backdropClass: 'backdrop',
+        data: {
+          userId: this.userId
+        }
+      })
+
+      dialogRef.afterClosed().subscribe((res) => {
+
+      })
     }
   }
 

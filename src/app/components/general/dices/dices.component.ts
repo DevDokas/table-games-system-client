@@ -87,6 +87,11 @@ export class DicesComponent implements OnChanges {
     this.result = Math.floor(Math.random() * (numOfSides - 1)) + 1
   }
 
+  toggleDiceModal() {
+    console.log('oi')
+    this.isDiceRolling = !this.isDiceRolling
+  }
+
 
   animationCreated(animationItem: AnimationItem): void {
     console.log(animationItem);

@@ -1,0 +1,46 @@
+@import '../../../s-colors';
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.backdrop {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.char-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 30vw;
+  border: 0.1vh solid $blackColor;
+  border-radius: 0.5vh;
+  padding: 1vh;
+}
+
+button {
+  padding: 0 0.5vw;
+}
+
+.edit {
+  border: 0.1vh solid $primaryColor;
+  border-radius: 0.5vh;
+  color: $primaryColor;
+  background-color: transparent;
+}
+
+.select {
+  border: 0;
+  border-radius: 0.5vh;
+  color: $whiteColor;
+  background-color: $primaryColor;
+}

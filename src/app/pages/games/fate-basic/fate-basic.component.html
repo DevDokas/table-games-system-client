@@ -1,3 +1,4 @@
-<section>
-  <app-dices class="dices-container" (showResultChange)="handleShowResultChange($event)" [hasD4]="true" [hasD6]="true"  [hasD8]="true"  [hasD10]="true"  [hasD12]="true"  [hasD20]="true" [showResult]="showResult"></app-dices>
+<section class="overflow-hidden">
+  <app-board></app-board>
+  <app-dices class="dices-container" (showResultChange)="handleShowResultChange($event)" [hasD4]="true" [hasD6]="true"  [hasD8]="true"  [hasD10]="true"  [hasD12]="true"  [hasD20]="false" [showResult]="showResult"></app-dices>
 </section>

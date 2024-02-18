@@ -9,6 +9,8 @@
     <button class="image-container" [matMenuTriggerFor]="menu"><img [src]="userImage" alt=""></button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Lista de Amigos</button>
+      <button mat-menu-item (click)="openModal('fichas-personagens')">Fichas de personagem</button>
+      <mat-divider></mat-divider>
       <button mat-menu-item (click)="logout()">Sair</button>
     </mat-menu>
   </div>

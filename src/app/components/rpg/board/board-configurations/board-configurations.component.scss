@@ -1,0 +1,18 @@
+@import '../../../../../s-colors';
+
+section {
+  height: fit-content;
+  width: 30vw;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+button {
+  padding: 0.5vh;
+  border: 0;
+  border-radius: 0.5vh;
+  color: $whiteColor;
+  background-color: $primaryColor;
+}
