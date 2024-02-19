@@ -43,6 +43,8 @@ export class GamesListComponent implements DoCheck{
 
     if (this.isLoggedIn) {
       this.getAllGames()
+    } else {
+      this.router.navigate(['/login'])
     }
 
     afterNextRender(() => {
@@ -81,8 +83,8 @@ export class GamesListComponent implements DoCheck{
         this.isLoggedIn = true
       }
 
-      if (!this.isLoggedIn) {
-        this.loginModal()
+      if (!this.isLoggedIn && this.router.url == '/') {
+        //this.loginModal()
       }
 
       console.log(this.isLoggedIn)
@@ -91,7 +93,7 @@ export class GamesListComponent implements DoCheck{
     }
   }
 
-  loginModal() {
+/*   loginModal() {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       disableClose: true,
     })
@@ -101,7 +103,7 @@ export class GamesListComponent implements DoCheck{
       this.emitterService.emit('login')
       this.getAllGames()
     })
-  }
+  } */
 
   selectGame(game: any) {
     if (isPlatformBrowser(this.platformId)) {

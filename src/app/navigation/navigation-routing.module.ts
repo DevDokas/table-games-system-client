@@ -9,18 +9,22 @@ const routes: Routes = [
     component: NavigationComponent,
     children: [
       {
-        path: '',
-        pathMatch: 'full',
-        loadChildren: () => import('../pages/games-list/games-list.module').then(m => m.GamesListModule)
-      },
-      {
         path: 'game',
         loadChildren: () => import('../pages/game-menu/game-menu.module').then(m => m.GameMenuModule)
       },
       {
         path: 'register',
         loadChildren: () => import('../pages/register/register.module').then(m => m.RegisterModule)
-      }
+      },
+      {
+        path: 'login',
+        loadChildren: () => import('../pages/login/login.module').then(m => m.LoginModule)
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () => import('../pages/games-list/games-list.module').then(m => m.GamesListModule)
+      },
     ]
   }
 ];

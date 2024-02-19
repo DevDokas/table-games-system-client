@@ -4,6 +4,8 @@ import { StorageService } from '../../services/storage.service';
 import { UserService } from '../../services/user.service';
 import { isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { LoginDialogComponent } from '../../components/login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-register',

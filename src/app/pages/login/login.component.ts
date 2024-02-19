@@ -1,30 +1,33 @@
-import { Component, DoCheck, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { UserService } from '../../services/user.service';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { StorageService } from '../../services/storage.service';
-import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 import * as jwt_decode from 'jwt-decode'
+import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-login-dialog',
-  templateUrl: './login-dialog.component.html',
-  styleUrl: './login-dialog.component.scss'
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
-export class LoginDialogComponent implements DoCheck {
-
+export class LoginComponent {
   loginForm: FormGroup
 
   showPassword: string = 'password'
 
+  isLoggedIn: boolean = false
+
   constructor(
-/*     public dialogRef: MatDialogRef<LoginDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, */
+    @Inject(PLATFORM_ID) private platformId: Object,
     private fb: FormBuilder,
     private router: Router,
     private userService: UserService,
     private storageService: StorageService,
   ) {
+    this.getUserId()
+
     this.loginForm = this.fb.group({
       login: [null, [Validators.required]],
       password: [null, [Validators.required]]
@@ -51,6 +54,17 @@ export class LoginDialogComponent implements DoCheck {
     }
   }
 
+  getUserId() {
+    if (isPlatformBrowser(this.platformId)) {
+      const userId = this.storageService.getFromLocalStorage(this.storageService.userId)
+      if (userId) {
+        this.isLoggedIn = true
+
+        this.router.navigate(['/'])
+      }
+    }
+  }
+
   login() {
     this.userService.login(this.loginForm.value).subscribe({
       next: (res: any) => {
@@ -69,10 +83,6 @@ export class LoginDialogComponent implements DoCheck {
   }
 
   redirectTo(url: string) {
-/*     this.dialogRef.close()
-
-    this.dialogRef.afterClosed().subscribe((res) => {
-    }) */
     this.router.navigate([`${url}`])
   }
 }

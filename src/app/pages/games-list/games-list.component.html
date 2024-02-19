@@ -1,15 +1,11 @@
-@if (isLoggedIn) {
-  <section class="p-5">
-    <div id="row" class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let game of gamesList">
-        @defer {
-          <app-card [game]="game" (click)="selectGame(game)"></app-card>
-        } @loading () {
-          <ngx-skeleton-loader [theme]="{height: '14vh'}"></ngx-skeleton-loader>
-        }
-      </div>
+<section class="p-5">
+  <div id="row" class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let game of gamesList">
+      @defer {
+        <app-card [game]="game" (click)="selectGame(game)"></app-card>
+      } @loading () {
+        <ngx-skeleton-loader [theme]="{height: '14vh'}"></ngx-skeleton-loader>
+      }
     </div>
-  </section>
-} @else {
-  <img class="h-100 w-100" src="https://img.freepik.com/fotos-premium/interior-da-sala-de-jogos-4k-8k-wallpaper-background-ultra-hd-wallpapers-uhd_882954-32515.jpg?w=1000" alt="">
-}
+  </div>
+</section>

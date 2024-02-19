@@ -6,6 +6,7 @@ import { CardModule } from '../../components/general/card/card.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { LoginDialogModule } from '../../components/login-dialog/login-dialog.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     GamesListRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    LoginDialogModule,
     CardModule,
     MatDialogModule,
     NgxSkeletonLoaderModule,
